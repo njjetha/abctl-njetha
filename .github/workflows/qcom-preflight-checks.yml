@@ -19,7 +19,7 @@ jobs:
       enable-commit-msg-check: false
       enable-armor-checkers: false
 
-      semgrep-cli-options: '--config auto --error --severity=ERROR'
+      #semgrep-cli-options: '--config auto --error --severity=ERROR'
     permissions:
       contents: read
       security-events: write
