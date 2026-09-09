@@ -9,7 +9,7 @@ on:
 jobs:
   preflight:
     name: Run QC Preflight Checks
-    uses: qualcomm/qcom-reusable-workflows/.github/workflows/reusable-qcom-preflight-checks-orchestrator.yml@v2
+    uses: qualcomm-linux-stg/qcom-reusable-workflows/.github/workflows/reusable-qcom-preflight-checks-orchestrator.yml@main
     with:
       enable-semgrep-scan: true
       enable-dependency-review: true
@@ -18,8 +18,8 @@ jobs:
       enable-commit-email-check: true
       enable-commit-msg-check: false
       enable-armor-checkers: false
-
-      #semgrep-cli-options: '--config auto --error --severity=ERROR'
+      semgrep-cli-options: '--config auto --config reusable-workflows/semgrep_rules/rules.yaml'
+      
     permissions:
       contents: read
       security-events: write
